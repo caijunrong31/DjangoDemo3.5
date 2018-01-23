@@ -10,13 +10,15 @@ class CityDictAdmin(object):
     list_display = ['name', 'desc', 'add_time']
     search_fields = ['name', 'desc']
     list_filter = ['name', 'desc', 'add_time']
+    model_icon = 'fa fa-university'
 
 
 class CourseOrgAdmin(object):
-    list_display = ['name', 'desc', 'click_nums', 'fav_nums', 'address', 'city', 'add_time']
-    search_fields = ['name', 'desc', 'click_nums', 'fav_nums', 'address', 'city']
-    list_filter = ['name', 'desc', 'click_nums', 'fav_nums', 'address', 'city', 'add_time']
+    list_display = ['name', 'desc', 'click_nums', 'fav_nums']
+    search_fields = ['name', 'desc', 'click_nums', 'fav_nums']
+    list_filter = ['name', 'desc', 'click_nums', 'fav_nums']
     relfield_style = 'fk-ajax' # 设置字段为搜索显示
+    model_icon = 'fa fa-university'
 
 
 class TeacherAdmin(object):

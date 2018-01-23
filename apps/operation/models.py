@@ -1,5 +1,5 @@
 # _*_ coding:utf-8 _*_
-from __future__ import unicode_literals
+# from __future__ import str_literals
 
 from datetime import datetime
 

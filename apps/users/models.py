@@ -1,5 +1,5 @@
 # _*_ coding:utf-8 _*_
-from __future__ import unicode_literals
+# from __future__ import str_literals
 from datetime import datetime
 
 from django.db import models
@@ -20,7 +20,7 @@ class UserProfile(AbstractUser):
         verbose_name = "用户信息"
         verbose_name_plural = verbose_name
 
-    def __unicode__(self):
+    def __str__(self):
         return self.username
 
     def get_unread_nums(self):
@@ -39,7 +39,7 @@ class EmailVerifiyRecord(models.Model):
         verbose_name = u"邮箱验证码"
         verbose_name_plural = verbose_name
 
-    def __unicode__(self):
+    def __str__(self):
         return '{0}({1})'.format(self.code, self.email)
 
 

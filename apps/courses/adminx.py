@@ -29,6 +29,7 @@ class CourseAdmin(object):
     inlines = [LessonInline, CourseResourceInline] # 相关资源添加
     style_fields = {"detail": "ueditor"} # 指定某个字段用某种样式
     # refresh_times = [3, 5] # 将页面定时刷新
+    import_excel = True
 
     def queryset(self):
         qs = super(CourseAdmin, self).queryset()
@@ -43,6 +44,11 @@ class CourseAdmin(object):
             course_org = obj.course_org
             course_org.course_nums = Course.objects.filter(course_org=course_org).count()
             course_org.save()
+
+    def post(self, request, *args, **kwargs): # 取出导入的excel文件
+        if 'excel' in request.FILES:
+            pass
+        return super(CourseAdmin, self).post(request, args, kwargs) # 重点
 
 
 

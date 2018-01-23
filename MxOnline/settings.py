@@ -81,7 +81,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'django.core.context_processors.media'
+                # 'django.core.context_processors.media' # 2.7
+                'django.template.context_processors.media' # 3.5
             ],
         },
     },
@@ -131,7 +132,8 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'zh-hans'
 
-TIME_ZONE = 'Asai/Shanghai'
+# TIME_ZONE = 'Asai/Shanghai' # 2.7
+TIME_ZONE = 'UTC' # 3.5
 
 USE_I18N = True
 
